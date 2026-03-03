@@ -19,7 +19,7 @@ const feedback = document.querySelector(".form-feedback");
 if (captureForm && feedback) {
   captureForm.addEventListener("submit", (event) => {
     event.preventDefault();
-    feedback.textContent = "Thanks. We will send the checklist to your inbox shortly.";
+    feedback.textContent = "Thanks. A&S will send the pre-shoot checklist to your inbox shortly.";
     captureForm.reset();
   });
 }
