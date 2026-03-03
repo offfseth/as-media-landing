@@ -1,0 +1,276 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>A&S Media | Real Estate Photography and Reels</title>
+  <meta name="description" content="A&S Media creates premium real estate photos, vertical reels, and listing visuals that help properties sell faster.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="orb orb-left" aria-hidden="true"></div>
+  <div class="orb orb-right" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <a href="#top" class="brand">A&S Media</a>
+    <nav aria-label="Primary">
+      <a href="#portfolio">Portfolio</a>
+      <a href="#reels">Reels</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <a class="btn btn-ghost" href="#contact">Book a shoot</a>
+  </header>
+
+  <main id="top">
+    <section class="section hero reveal">
+      <div class="hero-copy">
+        <p class="eyebrow">Real Estate Media for Agents and Teams</p>
+        <h1>Luxury-ready photo and reel packages that make listings move.</h1>
+        <p class="lead">
+          We help brokers, teams, and developers stand out with crisp interior photography,
+          twilight edits, and vertical short-form reels made for Instagram.
+        </p>
+
+        <form class="email-capture glass" id="contact">
+          <label for="email">Get our listing prep and shot-planning checklist.</label>
+          <div class="form-row">
+            <input id="email" type="email" name="email" placeholder="you@agency.com" required>
+            <button type="submit" class="btn btn-primary">Send it</button>
+          </div>
+          <p class="form-feedback" aria-live="polite"></p>
+        </form>
+      </div>
+
+      <div class="hero-panel glass">
+        <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1000&q=80" alt="Bright modern living room from a staged listing.">
+        <div class="panel-stats">
+          <article>
+            <p>Avg photo turnaround</p>
+            <strong>24 hours</strong>
+          </article>
+          <article>
+            <p>Reel delivery</p>
+            <strong>48 hours</strong>
+          </article>
+          <article>
+            <p>Monthly listings shot</p>
+            <strong>120+</strong>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="portfolio" class="section reveal">
+      <div class="section-head">
+        <h2>Featured property shoots</h2>
+        <p>Recent work from suburban homes, downtown condos, and luxury estates.</p>
+      </div>
+      <div class="portfolio-grid">
+        <article class="glass shoot-card">
+          <img src="https://images.unsplash.com/photo-1600566752355-35792bedcfea?auto=format&fit=crop&w=900&q=80" alt="Exterior of a multi-story suburban home.">
+          <div class="card-copy">
+            <h3>Hawthorne Estates</h3>
+            <p>42 edited photos, aerials, and twilight set.</p>
+          </div>
+        </article>
+        <article class="glass shoot-card">
+          <img src="https://images.unsplash.com/photo-1600607687644-c7f34b5e1e1d?auto=format&fit=crop&w=900&q=80" alt="Kitchen and dining area from a listing.">
+          <div class="card-copy">
+            <h3>Lakeside Renovation</h3>
+            <p>Daylight interiors and social-ready detail cuts.</p>
+          </div>
+        </article>
+        <article class="glass shoot-card">
+          <img src="https://images.unsplash.com/photo-1600607686527-6fb886090705?auto=format&fit=crop&w=900&q=80" alt="Living room with neutral tones and staging.">
+          <div class="card-copy">
+            <h3>Downtown Loft</h3>
+            <p>Editorial angles and agent branding overlays.</p>
+          </div>
+        </article>
+        <article class="glass shoot-card">
+          <img src="https://images.unsplash.com/photo-1600573472550-8090b5e0745e?auto=format&fit=crop&w=900&q=80" alt="Contemporary home exterior at dusk.">
+          <div class="card-copy">
+            <h3>Ridgeview Development</h3>
+            <p>New-build package with 4 vertical reel cuts.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section integrations reveal">
+      <div class="section-head">
+        <h2>Built for your listing workflow</h2>
+      </div>
+      <div class="integrations-row">
+        <span class="glass logo-chip">MLS</span>
+        <span class="glass logo-chip">Zillow</span>
+        <span class="glass logo-chip">Redfin</span>
+        <span class="glass logo-chip">Homes.com</span>
+        <span class="glass logo-chip">Instagram</span>
+        <span class="glass logo-chip">Matterport</span>
+      </div>
+    </section>
+
+    <section id="reels" class="section reveal">
+      <div class="section-head split">
+        <div>
+          <h2>Instagram reel highlights</h2>
+          <p>Vertical story-driven cuts for listing launches, open houses, and neighborhood teasers.</p>
+        </div>
+        <div class="slider-controls">
+          <button type="button" class="btn btn-ghost" id="reelsPrev" aria-label="Previous reel slide">Prev</button>
+          <button type="button" class="btn btn-ghost" id="reelsNext" aria-label="Next reel slide">Next</button>
+        </div>
+      </div>
+
+      <div class="reel-carousel glass">
+        <div class="reel-track" data-reel-track>
+          <article class="reel-slide">
+            <a class="reel-frame" href="https://www.instagram.com/" target="_blank" rel="noreferrer">
+              <img src="https://images.unsplash.com/photo-1600047509358-9dc75507daeb?auto=format&fit=crop&w=800&q=80" alt="Vertical video thumbnail of an exterior drone reveal.">
+              <span class="play-pill">Watch Reel</span>
+            </a>
+            <h3>Modern Exterior Walkup</h3>
+          </article>
+          <article class="reel-slide">
+            <a class="reel-frame" href="https://www.instagram.com/" target="_blank" rel="noreferrer">
+              <img src="https://images.unsplash.com/photo-1613977257363-707ba9348227?auto=format&fit=crop&w=800&q=80" alt="Vertical video thumbnail of kitchen staging details.">
+              <span class="play-pill">Watch Reel</span>
+            </a>
+            <h3>Kitchen Detail Story</h3>
+          </article>
+          <article class="reel-slide">
+            <a class="reel-frame" href="https://www.instagram.com/" target="_blank" rel="noreferrer">
+              <img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=800&q=80" alt="Vertical video thumbnail of primary bedroom showcase.">
+              <span class="play-pill">Watch Reel</span>
+            </a>
+            <h3>Primary Suite Highlight</h3>
+          </article>
+          <article class="reel-slide">
+            <a class="reel-frame" href="https://www.instagram.com/" target="_blank" rel="noreferrer">
+              <img src="https://images.unsplash.com/photo-1600573472592-401b489a3cdc?auto=format&fit=crop&w=800&q=80" alt="Vertical video thumbnail of backyard and pool sequence.">
+              <span class="play-pill">Watch Reel</span>
+            </a>
+            <h3>Backyard Lifestyle Cut</h3>
+          </article>
+          <article class="reel-slide">
+            <a class="reel-frame" href="https://www.instagram.com/" target="_blank" rel="noreferrer">
+              <img src="https://images.unsplash.com/photo-1600607687644-aac4c3eac7f4?auto=format&fit=crop&w=800&q=80" alt="Vertical video thumbnail of sunset exterior.">
+              <span class="play-pill">Watch Reel</span>
+            </a>
+            <h3>Twilight Exterior Teaser</h3>
+          </article>
+        </div>
+      </div>
+      <p class="tiny-note">Swap each reel link with your actual Instagram reel URL to publish live examples.</p>
+    </section>
+
+    <section class="section reveal">
+      <div class="section-head split">
+        <div>
+          <h2>What agent partners say</h2>
+        </div>
+        <div class="dots" role="tablist" aria-label="Testimonial selector">
+          <button type="button" data-quote-dot="0" aria-label="Show testimonial 1"></button>
+          <button type="button" data-quote-dot="1" aria-label="Show testimonial 2"></button>
+          <button type="button" data-quote-dot="2" aria-label="Show testimonial 3"></button>
+        </div>
+      </div>
+
+      <div class="testimonial-wrap glass" data-testimonials>
+        <article class="quote active">
+          <p>"A&S shot and delivered within a day, and our reel reached 18k views in the first weekend."</p>
+          <span>Jordan Lee, Keller Group</span>
+        </article>
+        <article class="quote">
+          <p>"Every listing looks premium now. Their edits are clean and the pacing on short videos is excellent."</p>
+          <span>Nadia Chen, Urban Nest Realty</span>
+        </article>
+        <article class="quote">
+          <p>"They handle photos, drone, and reels in one booking, which makes our launch process effortless."</p>
+          <span>Miguel Flores, Oakline Homes</span>
+        </article>
+      </div>
+    </section>
+
+    <section id="pricing" class="section reveal">
+      <div class="section-head split">
+        <div>
+          <h2>Simple pricing for media-heavy teams</h2>
+        </div>
+        <div class="billing-toggle glass" role="tablist" aria-label="Billing cycle">
+          <button type="button" class="active" data-billing="monthly">Monthly</button>
+          <button type="button" data-billing="yearly">Yearly</button>
+        </div>
+      </div>
+
+      <div class="pricing-grid">
+        <article class="price-card glass" data-monthly="$349" data-yearly="$299" data-note-monthly="per listing" data-note-yearly="per listing, billed annually">
+          <h3>Starter</h3>
+          <p class="price"><span class="amount">$349</span></p>
+          <p class="billing-note">per listing</p>
+          <ul>
+            <li>25 edited photos</li>
+            <li>1 vertical reel</li>
+            <li>24-hour delivery</li>
+          </ul>
+          <button class="btn btn-primary" type="button">Choose Starter</button>
+        </article>
+        <article class="price-card glass featured" data-monthly="$549" data-yearly="$479" data-note-monthly="per listing" data-note-yearly="per listing, billed annually">
+          <h3>Growth</h3>
+          <p class="price"><span class="amount">$549</span></p>
+          <p class="billing-note">per listing</p>
+          <ul>
+            <li>45 edited photos</li>
+            <li>2 vertical reels</li>
+            <li>Drone add-on included</li>
+          </ul>
+          <button class="btn btn-primary" type="button">Choose Growth</button>
+        </article>
+        <article class="price-card glass" data-monthly="$899" data-yearly="$799" data-note-monthly="per listing" data-note-yearly="per listing, billed annually">
+          <h3>Signature</h3>
+          <p class="price"><span class="amount">$899</span></p>
+          <p class="billing-note">per listing</p>
+          <ul>
+            <li>60 edited photos</li>
+            <li>4 vertical reels</li>
+            <li>Agent branding toolkit</li>
+          </ul>
+          <button class="btn btn-primary" type="button">Choose Signature</button>
+        </article>
+      </div>
+    </section>
+
+    <section id="faq" class="section reveal">
+      <div class="section-head">
+        <h2>FAQ</h2>
+      </div>
+      <div class="faq-list">
+        <details class="glass">
+          <summary>How quickly can you shoot and deliver?</summary>
+          <p>Most shoots are completed within 1-2 days and delivered in 24 hours after the session.</p>
+        </details>
+        <details class="glass">
+          <summary>Do you travel outside the metro area?</summary>
+          <p>Yes. We cover surrounding suburbs and can quote travel for destinations outside our normal zone.</p>
+        </details>
+        <details class="glass">
+          <summary>Can you match our brokerage brand style?</summary>
+          <p>We keep color tone, pacing, and graphic overlays aligned with your brokerage guidelines on every project.</p>
+        </details>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>A&S Media</p>
+    <p>Real Estate Photography, Video, and Reels</p>
+    <a href="mailto:hello@asmedia.com">hello@asmedia.com</a>
+  </footer>
+</body>
+</html>
