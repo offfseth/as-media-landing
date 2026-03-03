@@ -235,7 +235,8 @@ input[type="email"] {
 .btn:focus-visible,
 a:focus-visible,
 input:focus-visible,
-summary:focus-visible {
+summary:focus-visible,
+button:focus-visible {
   outline: 3px solid var(--focus);
   outline-offset: 3px;
 }
@@ -300,12 +301,70 @@ summary:focus-visible {
 
 .shoot-card {
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
 }
 
-.shoot-card img {
-  width: 100%;
+.property-gallery {
+  position: relative;
   aspect-ratio: 4 / 3;
+  overflow: hidden;
+}
+
+.property-track {
+  display: flex;
+  height: 100%;
+  transition: transform 320ms ease;
+  will-change: transform;
+}
+
+.property-photo {
+  width: 100%;
+  height: 100%;
+  flex: 0 0 100%;
   object-fit: cover;
+}
+
+.property-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  border: 1px solid rgba(109, 135, 214, 0.45);
+  background: rgba(255, 255, 255, 0.82);
+  color: #2d3f74;
+  border-radius: 12px;
+  padding: 6px 10px;
+  font: inherit;
+  font-size: 0.74rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.property-nav.prev {
+  left: 8px;
+}
+
+.property-nav.next {
+  right: 8px;
+}
+
+.property-nav:disabled {
+  opacity: 0.46;
+  cursor: not-allowed;
+}
+
+.property-count {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  margin: 0;
+  font-size: 0.74rem;
+  font-weight: 700;
+  color: #2d3f74;
+  background: rgba(255, 255, 255, 0.82);
+  border: 1px solid rgba(109, 135, 214, 0.45);
+  border-radius: 999px;
+  padding: 4px 8px;
 }
 
 .card-copy {
