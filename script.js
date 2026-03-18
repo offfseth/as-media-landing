@@ -1,4 +1,7 @@
+document.documentElement.classList.add("js");
+
 const revealItems = document.querySelectorAll(".reveal");
+const staggerGroups = document.querySelectorAll(".stagger-group");
 
 const revealObserver = new IntersectionObserver(
   (entries, observer) => {
@@ -10,6 +13,13 @@ const revealObserver = new IntersectionObserver(
   },
   { threshold: 0.16 }
 );
+
+staggerGroups.forEach((group) => {
+  const items = group.querySelectorAll(".stagger-item");
+  items.forEach((item, index) => {
+    item.style.setProperty("--stagger-delay", `${index * 110}ms`);
+  });
+});
 
 revealItems.forEach((item) => revealObserver.observe(item));
 
@@ -23,48 +33,6 @@ if (captureForm && feedback) {
     captureForm.reset();
   });
 }
-
-const propertyCards = Array.from(document.querySelectorAll("[data-property-carousel]"));
-
-propertyCards.forEach((card) => {
-  const track = card.querySelector("[data-property-track]");
-  const prev = card.querySelector("[data-property-prev]");
-  const next = card.querySelector("[data-property-next]");
-  const count = card.querySelector("[data-property-count]");
-  const photos = track ? Array.from(track.querySelectorAll(".property-photo")) : [];
-
-  if (!track || photos.length === 0) return;
-
-  let photoIndex = 0;
-
-  function renderPropertySlide() {
-    photoIndex = Math.min(Math.max(photoIndex, 0), photos.length - 1);
-    track.style.transform = `translateX(-${photoIndex * 100}%)`;
-
-    if (count) {
-      count.textContent = `${photoIndex + 1} / ${photos.length}`;
-    }
-
-    if (prev) prev.disabled = photoIndex === 0;
-    if (next) next.disabled = photoIndex === photos.length - 1;
-  }
-
-  if (prev) {
-    prev.addEventListener("click", () => {
-      photoIndex -= 1;
-      renderPropertySlide();
-    });
-  }
-
-  if (next) {
-    next.addEventListener("click", () => {
-      photoIndex += 1;
-      renderPropertySlide();
-    });
-  }
-
-  renderPropertySlide();
-});
 
 const pricingButtons = document.querySelectorAll("[data-billing]");
 const pricingCards = document.querySelectorAll(".price-card");
