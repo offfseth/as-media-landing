@@ -1,16 +1,20 @@
-﻿:root {
-  --bg: #eff4ff;
-  --surface: rgba(255, 255, 255, 0.62);
-  --surface-strong: rgba(255, 255, 255, 0.8);
-  --text: #16203d;
-  --muted: #536187;
-  --border: rgba(128, 156, 230, 0.38);
-  --brand: #5a65f9;
-  --brand-2: #33a1ff;
-  --focus: #1f6fff;
+:root {
+  --bg: #11151c;
+  --surface: rgba(18, 25, 37, 0.68);
+  --surface-strong: rgba(28, 37, 55, 0.84);
+  --text: #f2f5fb;
+  --muted: #b1bfd4;
+  --border: rgba(223, 235, 255, 0.28);
+  --border-soft: rgba(223, 235, 255, 0.36);
+  --border-strong: rgba(235, 243, 255, 0.48);
+  --border-accent: rgba(151, 180, 255, 0.56);
+  --brand: #6c7cff;
+  --brand-2: #4eb3ff;
+  --focus: #8ab7ff;
   --radius: 22px;
   --btn-radius: 14px;
-  --shadow: 0 20px 45px rgba(58, 76, 130, 0.14);
+  --shadow: 0 24px 55px rgba(2, 6, 18, 0.38);
+  color-scheme: dark;
 }
 
 * {
@@ -27,9 +31,9 @@ body {
   font-family: "Satoshi", "Plus Jakarta Sans", "Avenir Next", "Segoe UI", sans-serif;
   color: var(--text);
   background:
-    radial-gradient(circle at 12% 14%, rgba(178, 171, 255, 0.34), transparent 38%),
-    radial-gradient(circle at 88% 10%, rgba(106, 200, 255, 0.32), transparent 34%),
-    linear-gradient(165deg, #f7f3ff 0%, #eef6ff 48%, #edf7ff 100%);
+    radial-gradient(circle at 12% 14%, rgba(128, 112, 214, 0.22), transparent 38%),
+    radial-gradient(circle at 88% 10%, rgba(76, 148, 222, 0.2), transparent 34%),
+    linear-gradient(165deg, #111418 0%, #1b222b 46%, #3f4957 100%);
   min-height: 100vh;
   line-height: 1.5;
 }
@@ -47,13 +51,13 @@ body {
 .orb-left {
   top: -90px;
   left: -120px;
-  background: rgba(157, 119, 255, 0.26);
+  background: rgba(122, 108, 210, 0.22);
 }
 
 .orb-right {
   top: -80px;
   right: -120px;
-  background: rgba(66, 163, 255, 0.25);
+  background: rgba(74, 146, 219, 0.2);
 }
 
 .site-header {
@@ -65,7 +69,7 @@ body {
   justify-content: space-between;
   gap: 12px;
   border: 1px solid var(--border);
-  background: rgba(255, 255, 255, 0.65);
+  background: rgba(12, 17, 27, 0.72);
   border-radius: 18px;
   backdrop-filter: blur(10px);
   position: sticky;
@@ -119,7 +123,7 @@ body {
   letter-spacing: 0.08em;
   text-transform: uppercase;
   font-weight: 700;
-  color: #5f67c8;
+  color: #b8c3ff;
 }
 
 h1,
@@ -169,7 +173,7 @@ p {
 .email-capture label {
   font-weight: 600;
   font-size: 0.92rem;
-  color: #2a3863;
+  color: #e3ebfa;
 }
 
 .form-row {
@@ -182,17 +186,21 @@ input[type="email"] {
   width: 100%;
   min-height: 48px;
   border-radius: 14px;
-  border: 1px solid rgba(122, 143, 207, 0.55);
-  background: rgba(255, 255, 255, 0.85);
+  border: 1px solid var(--border-soft);
+  background: rgba(10, 15, 24, 0.6);
   padding: 0 14px;
   color: var(--text);
   font: inherit;
 }
 
+input[type="email"]::placeholder {
+  color: rgba(218, 228, 247, 0.54);
+}
+
 .form-feedback {
   min-height: 1.2rem;
   margin-top: 8px;
-  color: #27458c;
+  color: #bed2ff;
   font-size: 0.88rem;
 }
 
@@ -223,13 +231,13 @@ input[type="email"] {
 }
 
 .btn-ghost {
-  color: #354272;
-  background: rgba(255, 255, 255, 0.74);
-  border-color: rgba(109, 135, 214, 0.4);
+  color: #eef3ff;
+  background: rgba(16, 22, 33, 0.62);
+  border-color: rgba(223, 235, 255, 0.34);
 }
 
 .btn-ghost:hover {
-  background: rgba(255, 255, 255, 0.95);
+  background: rgba(23, 31, 46, 0.88);
 }
 
 .btn:focus-visible,
@@ -260,7 +268,7 @@ summary:focus-visible {
 
 .panel-stats article {
   background: var(--surface-strong);
-  border: 1px solid rgba(124, 150, 227, 0.34);
+  border: 1px solid rgba(223, 235, 255, 0.28);
   border-radius: 16px;
   padding: 10px;
 }
@@ -328,7 +336,7 @@ summary:focus-visible {
   padding: 11px 16px;
   border-radius: 14px;
   font-weight: 700;
-  color: #38508c;
+  color: #dde6fa;
   font-size: 0.9rem;
 }
 
@@ -377,7 +385,7 @@ summary:focus-visible {
   overflow: hidden;
   border-radius: 18px;
   text-decoration: none;
-  border: 1px solid rgba(118, 144, 221, 0.45);
+  border: 1px solid var(--border-soft);
 }
 
 .reel-frame img {
@@ -393,7 +401,7 @@ summary:focus-visible {
   transform: translateX(-50%);
   border-radius: 999px;
   padding: 7px 14px;
-  background: rgba(22, 32, 61, 0.75);
+  background: rgba(8, 12, 20, 0.78);
   color: #fff;
   font-weight: 700;
   font-size: 0.82rem;
@@ -443,8 +451,8 @@ summary:focus-visible {
   width: 12px;
   height: 12px;
   border-radius: 999px;
-  border: 1px solid rgba(110, 136, 211, 0.6);
-  background: rgba(255, 255, 255, 0.65);
+  border: 1px solid rgba(223, 235, 255, 0.42);
+  background: rgba(19, 26, 38, 0.72);
   cursor: pointer;
 }
 
@@ -467,13 +475,13 @@ summary:focus-visible {
   font: inherit;
   font-weight: 700;
   background: transparent;
-  color: #43507f;
+  color: #c6d2e5;
   cursor: pointer;
 }
 
 .billing-toggle button.active {
-  background: #fff;
-  border-color: rgba(107, 135, 216, 0.5);
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(223, 235, 255, 0.34);
 }
 
 .pricing-grid {
@@ -487,8 +495,8 @@ summary:focus-visible {
 }
 
 .price-card.featured {
-  border-color: rgba(75, 108, 212, 0.56);
-  background: rgba(255, 255, 255, 0.75);
+  border-color: var(--border-accent);
+  background: rgba(24, 31, 46, 0.82);
 }
 
 .price {
@@ -513,7 +521,7 @@ summary:focus-visible {
   list-style: none;
   display: grid;
   gap: 8px;
-  color: #2e3e69;
+  color: #d9e2f4;
 }
 
 .price-card li {
@@ -560,8 +568,8 @@ details p {
   width: min(1150px, 92vw);
   margin: 20px auto 30px;
   padding: 16px;
-  border-top: 1px solid rgba(120, 141, 201, 0.4);
-  color: #4b5881;
+  border-top: 1px solid rgba(223, 235, 255, 0.3);
+  color: #a8b7cf;
   display: flex;
   flex-wrap: wrap;
   gap: 16px;
@@ -570,7 +578,7 @@ details p {
 }
 
 .site-footer a {
-  color: #2f4f9e;
+  color: #8cb8ff;
 }
 
 .social-links {
@@ -583,19 +591,21 @@ details p {
   width: 40px;
   height: 40px;
   border-radius: 12px;
-  border: 1px solid rgba(109, 137, 214, 0.5);
-  background: rgba(255, 255, 255, 0.74);
-  color: #2f4f9e;
+  border: 1px solid var(--border-strong);
+  background: rgba(16, 22, 33, 0.66);
+  color: #cfe1ff;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   text-decoration: none;
-  transition: transform 0.2s ease, background 0.2s ease;
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.06);
+  transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
 }
 
 .social-icon:hover {
   transform: translateY(-1px);
-  background: rgba(255, 255, 255, 0.95);
+  background: rgba(23, 31, 46, 0.9);
+  border-color: rgba(235, 243, 255, 0.72);
 }
 
 .social-icon svg {
@@ -740,4 +750,3 @@ details p {
     grid-template-columns: 1fr;
   }
 }
-
