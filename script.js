@@ -24,12 +24,12 @@ staggerGroups.forEach((group) => {
 revealItems.forEach((item) => revealObserver.observe(item));
 
 const captureForm = document.querySelector(".email-capture");
-const feedback = document.querySelector(".form-feedback");
+const feedback = captureForm?.querySelector(".form-feedback");
 
 if (captureForm && feedback) {
   captureForm.addEventListener("submit", (event) => {
     event.preventDefault();
-    feedback.textContent = "Thanks. A&S will send the pre-shoot checklist to your inbox shortly.";
+    feedback.textContent = "Thanks. A&S will review your inquiry and reply with next steps shortly.";
     captureForm.reset();
   });
 }
