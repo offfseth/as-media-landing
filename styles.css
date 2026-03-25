@@ -339,6 +339,10 @@ p {
   object-fit: cover;
 }
 
+.showcase-main-photo {
+  object-position: center 54%;
+}
+
 .showcase-main::after {
   content: "";
   position: absolute;
@@ -389,6 +393,10 @@ p {
   object-fit: cover;
   border-radius: 18px;
   margin-bottom: 12px;
+}
+
+.showcase-kitchen-photo {
+  object-position: center;
 }
 
 .showcase-shot strong {
@@ -489,6 +497,10 @@ p {
   object-fit: cover;
 }
 
+.portfolio-feature-photo {
+  object-position: center;
+}
+
 .project-meta {
   padding: 22px;
   display: grid;
@@ -551,6 +563,14 @@ p {
   object-fit: cover;
 }
 
+.portfolio-living-photo {
+  object-position: center;
+}
+
+.portfolio-kitchen-photo {
+  object-position: center;
+}
+
 .project-card::after {
   content: "";
   position: absolute;
@@ -575,19 +595,41 @@ p {
   line-height: 1.25;
 }
 
-.portfolio-mosaic {
+.portfolio-footer {
   margin-top: 14px;
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: minmax(280px, 1fr) minmax(0, 1.2fr);
   gap: 14px;
 }
 
-.portfolio-mosaic .project-card:first-child {
-  grid-column: auto;
+.portfolio-caption,
+.portfolio-tags {
+  padding: 18px;
 }
 
-.portfolio-mosaic .project-card {
-  min-height: 170px;
+.portfolio-caption p {
+  margin-top: 10px;
+  color: var(--muted);
+  font-size: 0.96rem;
+  line-height: 1.6;
+}
+
+.portfolio-tags {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+}
+
+.portfolio-tags span {
+  padding: 9px 12px;
+  border-radius: 999px;
+  border: 1px solid rgba(223, 235, 255, 0.14);
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--muted-strong);
+  font-size: 0.88rem;
+  font-weight: 650;
+  letter-spacing: -0.01em;
 }
 
 .capabilities-shell,
@@ -1361,10 +1403,6 @@ summary:focus-visible {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .portfolio-mosaic {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
   .results-metrics {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
@@ -1389,7 +1427,8 @@ summary:focus-visible {
   }
 
   .section-head.split,
-  .showcase-rail {
+  .showcase-rail,
+  .portfolio-footer {
     grid-template-columns: 1fr;
   }
 
@@ -1397,13 +1436,8 @@ summary:focus-visible {
   .capabilities-grid,
   .results-metrics,
   .pricing-grid,
-  .portfolio-mosaic,
   .form-grid {
     grid-template-columns: 1fr;
-  }
-
-  .portfolio-mosaic .project-card:first-child {
-    grid-column: auto;
   }
 
   .contact-form button,
