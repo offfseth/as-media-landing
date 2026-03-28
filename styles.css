@@ -708,7 +708,7 @@ p {
 }
 
 .summary-points li::before,
-.price-card li::before {
+.contact-list li::before {
   content: "";
   position: absolute;
   left: 0;
@@ -919,82 +919,6 @@ p {
   border-color: transparent;
 }
 
-.billing-toggle {
-  display: inline-flex;
-  border-radius: 14px;
-  padding: 4px;
-  gap: 4px;
-}
-
-.billing-toggle button {
-  border: 1px solid transparent;
-  border-radius: 10px;
-  padding: 8px 13px;
-  font: inherit;
-  font-weight: 700;
-  background: transparent;
-  color: #c6d2e5;
-  cursor: pointer;
-}
-
-.billing-toggle button.active {
-  background: rgba(255, 255, 255, 0.12);
-  border-color: rgba(223, 235, 255, 0.34);
-}
-
-.pricing-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 16px;
-}
-
-.price-card {
-  padding: 22px;
-}
-
-.price-card.featured {
-  border-color: var(--border-accent);
-  background:
-    linear-gradient(180deg, rgba(110, 128, 255, 0.08), rgba(18, 25, 37, 0.78)),
-    rgba(24, 31, 46, 0.84);
-}
-
-.price {
-  margin-top: 12px;
-}
-
-.amount {
-  font-family: var(--font-display);
-  font-size: 2.15rem;
-  font-weight: 600;
-  letter-spacing: -0.04em;
-}
-
-.billing-note {
-  margin-top: 4px;
-  color: var(--muted);
-  font-size: 0.88rem;
-}
-
-.price-copy {
-  margin-top: 12px;
-  font-size: 0.95rem;
-}
-
-.price-card ul {
-  margin: 16px 0 18px;
-  padding: 0;
-  list-style: none;
-  display: grid;
-  gap: 9px;
-}
-
-.price-card li {
-  position: relative;
-  padding-left: 18px;
-  color: #d8e1f4;
-}
-
 .faq-layout {
   display: grid;
   grid-template-columns: minmax(320px, 0.42fr) minmax(0, 0.58fr);
@@ -1051,6 +975,44 @@ details p {
   display: grid;
   align-content: start;
   gap: 16px;
+}
+
+.contact-notes {
+  display: grid;
+  gap: 14px;
+}
+
+.contact-note {
+  padding: 18px 18px 20px;
+  border-radius: 22px;
+}
+
+.contact-note span {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #a8bbd8;
+}
+
+.contact-note p {
+  margin-top: 10px;
+  color: #d8e1f4;
+}
+
+.contact-list {
+  margin: 10px 0 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 10px;
+}
+
+.contact-list li {
+  position: relative;
+  padding-left: 18px;
+  color: #d8e1f4;
 }
 
 .contact-links {
@@ -1398,8 +1360,7 @@ summary:focus-visible {
     max-width: none;
   }
 
-  .capabilities-grid,
-  .pricing-grid {
+  .capabilities-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
@@ -1435,7 +1396,6 @@ summary:focus-visible {
   .hero-proof,
   .capabilities-grid,
   .results-metrics,
-  .pricing-grid,
   .form-grid {
     grid-template-columns: 1fr;
   }

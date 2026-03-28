@@ -29,38 +29,11 @@ const feedback = captureForm?.querySelector(".form-feedback");
 if (captureForm && feedback) {
   captureForm.addEventListener("submit", (event) => {
     event.preventDefault();
-    feedback.textContent = "Thanks. A&S will review your inquiry and reply with next steps shortly.";
+    feedback.textContent =
+      "Thanks. A&S will review your inquiry and reply with availability, scope guidance, and a custom quote shortly.";
     captureForm.reset();
   });
 }
-
-const pricingButtons = document.querySelectorAll("[data-billing]");
-const pricingCards = document.querySelectorAll(".price-card");
-
-function setBilling(mode) {
-  pricingButtons.forEach((button) => {
-    button.classList.toggle("active", button.dataset.billing === mode);
-    button.setAttribute("aria-selected", String(button.dataset.billing === mode));
-  });
-
-  pricingCards.forEach((card) => {
-    const amount = card.querySelector(".amount");
-    const note = card.querySelector(".billing-note");
-    if (!amount || !note) return;
-
-    amount.textContent = card.dataset[mode] || amount.textContent;
-    note.textContent =
-      mode === "monthly"
-        ? card.dataset.noteMonthly || note.textContent
-        : card.dataset.noteYearly || note.textContent;
-  });
-}
-
-pricingButtons.forEach((button) => {
-  button.addEventListener("click", () => setBilling(button.dataset.billing));
-});
-
-setBilling("monthly");
 
 const testimonialCards = Array.from(document.querySelectorAll(".quote"));
 const dotButtons = Array.from(document.querySelectorAll("[data-quote-dot]"));

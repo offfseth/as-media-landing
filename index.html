@@ -33,8 +33,8 @@
     <nav aria-label="Primary">
       <a href="#portfolio">Portfolio</a>
       <a href="#reels">Reels</a>
-      <a href="#pricing">Pricing</a>
       <a href="#faq">FAQ</a>
+      <a href="#contact">Contact</a>
     </nav>
 
     <a class="btn btn-ghost" href="#contact">Book a shoot</a>
@@ -380,78 +380,6 @@
       </div>
     </section>
 
-    <section id="pricing" class="section reveal">
-      <div class="section-head split">
-        <div>
-          <span class="section-tag">Pricing</span>
-          <h2>Packages built for listing velocity.</h2>
-        </div>
-        <div class="billing-toggle glass" role="tablist" aria-label="Billing cycle">
-          <button type="button" class="active" data-billing="monthly">Monthly</button>
-          <button type="button" data-billing="yearly">Yearly</button>
-        </div>
-      </div>
-
-      <div class="pricing-grid stagger-group">
-        <article
-          class="price-card glass stagger-item"
-          data-monthly="$349"
-          data-yearly="$299"
-          data-note-monthly="per listing"
-          data-note-yearly="per listing, billed annually"
-        >
-          <h3>Starter</h3>
-          <p class="price"><span class="amount">$349</span></p>
-          <p class="billing-note">per listing</p>
-          <p class="price-copy">A clean photo package for standard residential launches.</p>
-          <ul>
-            <li>25 edited photos</li>
-            <li>1 vertical reel</li>
-            <li>24-hour delivery</li>
-          </ul>
-          <button class="btn btn-primary" type="button">Book Starter</button>
-        </article>
-
-        <article
-          class="price-card glass featured stagger-item"
-          data-monthly="$549"
-          data-yearly="$479"
-          data-note-monthly="per listing"
-          data-note-yearly="per listing, billed annually"
-        >
-          <h3>Growth</h3>
-          <p class="price"><span class="amount">$549</span></p>
-          <p class="billing-note">per listing</p>
-          <p class="price-copy">A stronger mixed-media package for busy agents and premium listings.</p>
-          <ul>
-            <li>45 edited photos</li>
-            <li>2 vertical reels</li>
-            <li>Drone add-on included</li>
-          </ul>
-          <button class="btn btn-primary" type="button">Book Growth</button>
-        </article>
-
-        <article
-          class="price-card glass stagger-item"
-          data-monthly="$899"
-          data-yearly="$799"
-          data-note-monthly="per listing"
-          data-note-yearly="per listing, billed annually"
-        >
-          <h3>Signature</h3>
-          <p class="price"><span class="amount">$899</span></p>
-          <p class="billing-note">per listing</p>
-          <p class="price-copy">Full launch coverage for standout homes, broker teams, and developments.</p>
-          <ul>
-            <li>60 edited photos</li>
-            <li>4 vertical reels</li>
-            <li>Agent branding toolkit</li>
-          </ul>
-          <button class="btn btn-primary" type="button">Book Signature</button>
-        </article>
-      </div>
-    </section>
-
     <section id="faq" class="section reveal">
       <div class="faq-layout">
         <div class="faq-copy">
@@ -484,11 +412,38 @@
       <div class="contact-shell">
         <div class="contact-copy">
           <span class="section-tag">Contact</span>
-          <h2>Get in touch.</h2>
+          <h2>Request a custom quote for the property.</h2>
           <p>
-            Share the property, timeline, and deliverables you need. A&amp;S will follow up with
-            the right package and next steps.
+            A&amp;S does not use a fixed rate card yet. Every quote is scoped around the property,
+            the media mix, the timeline, and the launch support you need.
           </p>
+
+          <div class="contact-notes stagger-group">
+            <article class="contact-note glass stagger-item">
+              <span>What shapes the quote</span>
+              <ul class="contact-list">
+                <li>Property size, layout complexity, and target image count</li>
+                <li>Photo-only coverage or a mix of reels, drone, and add-ons</li>
+                <li>Travel distance, access timing, and turnaround expectations</li>
+              </ul>
+            </article>
+
+            <article class="contact-note glass stagger-item">
+              <span>Common deliverables</span>
+              <p>
+                MLS-ready stills, vertical walkthrough reels, exterior coverage, and organized
+                media handoff for agents, assistants, and marketing teams.
+              </p>
+            </article>
+
+            <article class="contact-note glass stagger-item">
+              <span>Best way to inquire</span>
+              <p>
+                Send the address, ideal shoot date, property type, and any must-have coverage so
+                the reply can include the right recommendation and next steps.
+              </p>
+            </article>
+          </div>
 
           <div class="contact-links" aria-label="Contact links">
             <a class="contact-bubble" href="mailto:ascommercialmedia@gmail.com" aria-label="Email A&S Media">
@@ -514,20 +469,22 @@
 
         <form class="email-capture contact-form">
           <label class="form-label" for="contact-email">
-            Tell us about the listing and we will reply with next steps.
+            Send the listing details and A&amp;S will reply with availability, coverage guidance,
+            and a custom quote.
           </label>
           <div class="form-grid">
             <input id="contact-name" type="text" name="name" placeholder="Name or team" required>
             <input id="contact-email" type="email" name="email" placeholder="you@agency.com" required>
             <input type="text" name="property" placeholder="Property address or project type">
             <select name="service" aria-label="Select a service">
-              <option value="">Service needed</option>
-              <option value="photo">Photo package</option>
-              <option value="photo-reels">Photo + reels</option>
-              <option value="full-launch">Full launch package</option>
+              <option value="">Coverage needed</option>
+              <option value="photo">Photography only</option>
+              <option value="photo-reels">Photography + reels</option>
+              <option value="full-media">Photography + reels + drone</option>
+              <option value="not-sure">Not sure yet</option>
             </select>
-            <textarea name="details" rows="5" placeholder="Timeline, listing size, and anything you want us to know."></textarea>
-            <button type="submit" class="btn btn-primary">Send inquiry</button>
+            <textarea name="details" rows="5" placeholder="Timeline, square footage, occupancy status, access notes, and anything else that will help scope the project."></textarea>
+            <button type="submit" class="btn btn-primary">Request custom quote</button>
           </div>
           <p class="form-feedback" aria-live="polite"></p>
         </form>
@@ -544,7 +501,7 @@
     <nav class="footer-nav" aria-label="Footer">
       <a href="#portfolio">Portfolio</a>
       <a href="#reels">Reels</a>
-      <a href="#pricing">Pricing</a>
+      <a href="#faq">FAQ</a>
       <a href="#contact">Contact</a>
     </nav>
 
