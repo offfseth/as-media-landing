@@ -1,106 +1,131 @@
-document.documentElement.classList.add("js");
+// ── Header scroll state ──────────────────────────────
+const header = document.getElementById("site-header");
 
-const revealItems = document.querySelectorAll(".reveal");
-const staggerGroups = document.querySelectorAll(".stagger-group");
-
-const revealObserver = new IntersectionObserver(
-  (entries, observer) => {
-    entries.forEach((entry) => {
-      if (!entry.isIntersecting) return;
-      entry.target.classList.add("revealed");
-      observer.unobserve(entry.target);
-    });
-  },
-  { threshold: 0.16 }
-);
-
-staggerGroups.forEach((group) => {
-  const items = group.querySelectorAll(".stagger-item");
-  items.forEach((item, index) => {
-    item.style.setProperty("--stagger-delay", `${index * 110}ms`);
-  });
-});
-
-revealItems.forEach((item) => revealObserver.observe(item));
-
-const captureForm = document.querySelector(".email-capture");
-const feedback = captureForm?.querySelector(".form-feedback");
-
-if (captureForm && feedback) {
-  captureForm.addEventListener("submit", (event) => {
-    event.preventDefault();
-    feedback.textContent =
-      "Thanks. A&S will review your inquiry and reply with availability, scope guidance, and a custom quote shortly.";
-    captureForm.reset();
-  });
+function updateHeader() {
+  header?.classList.toggle("scrolled", window.scrollY > 40);
 }
 
+window.addEventListener("scroll", updateHeader, { passive: true });
+updateHeader();
+
+// ── Mobile menu ──────────────────────────────────────
+const menuToggle = document.getElementById("menu-toggle");
+const menuClose = document.getElementById("menu-close");
+const mobileOverlay = document.getElementById("mobile-overlay");
+
+function openMenu() {
+  mobileOverlay.classList.add("open");
+  mobileOverlay.setAttribute("aria-hidden", "false");
+  menuToggle.setAttribute("aria-expanded", "true");
+  document.body.style.overflow = "hidden";
+}
+
+function closeMenu() {
+  mobileOverlay.classList.remove("open");
+  mobileOverlay.setAttribute("aria-hidden", "true");
+  menuToggle.setAttribute("aria-expanded", "false");
+  document.body.style.overflow = "";
+}
+
+menuToggle?.addEventListener("click", openMenu);
+menuClose?.addEventListener("click", closeMenu);
+mobileOverlay?.querySelectorAll("a").forEach((a) =>
+  a.addEventListener("click", closeMenu)
+);
+
+// ── Scroll reveal ────────────────────────────────────
+const revealObserver = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) return;
+      entry.target.classList.add("visible");
+      revealObserver.unobserve(entry.target);
+    });
+  },
+  { threshold: 0.1 }
+);
+
+document.querySelectorAll(".reveal").forEach((el) => revealObserver.observe(el));
+
+// ── Reel carousel ────────────────────────────────────
+const reelTrack = document.getElementById("reels-track");
+const reelPrev = document.getElementById("reelPrev");
+const reelNext = document.getElementById("reelNext");
+const reelsNav = document.getElementById("reels-nav");
+let reelIndex = 0;
+
+function visibleReels() {
+  if (window.innerWidth <= 540) return 1;
+  if (window.innerWidth <= 900) return 2;
+  return 3;
+}
+
+function updateReels() {
+  if (!reelTrack) return;
+  const slides = reelTrack.querySelectorAll(".reel-item");
+  if (!slides.length) return;
+
+  const gap = 20;
+  const slideW = slides[0].getBoundingClientRect().width + gap;
+  const maxIndex = Math.max(0, slides.length - visibleReels());
+
+  reelIndex = Math.min(Math.max(0, reelIndex), maxIndex);
+  reelTrack.style.transform = `translateX(-${reelIndex * slideW}px)`;
+
+  if (reelPrev) reelPrev.disabled = reelIndex === 0;
+  if (reelNext) reelNext.disabled = reelIndex >= maxIndex;
+
+  if (reelsNav) reelsNav.style.display = maxIndex > 0 ? "" : "none";
+}
+
+reelPrev?.addEventListener("click", () => { reelIndex--; updateReels(); });
+reelNext?.addEventListener("click", () => { reelIndex++; updateReels(); });
+window.addEventListener("resize", updateReels, { passive: true });
+window.addEventListener("load", updateReels);
+
+// ── Testimonials ─────────────────────────────────────
 const testimonialCards = Array.from(document.querySelectorAll(".quote"));
 const dotButtons = Array.from(document.querySelectorAll("[data-quote-dot]"));
 let activeQuote = 0;
+let testimonialPaused = false;
 
 function showQuote(index) {
   activeQuote = (index + testimonialCards.length) % testimonialCards.length;
 
-  testimonialCards.forEach((card, cardIndex) => {
-    card.classList.toggle("active", cardIndex === activeQuote);
-  });
+  testimonialCards.forEach((card, i) =>
+    card.classList.toggle("active", i === activeQuote)
+  );
 
-  dotButtons.forEach((dot, dotIndex) => {
-    dot.classList.toggle("active", dotIndex === activeQuote);
-    dot.setAttribute("aria-selected", String(dotIndex === activeQuote));
+  dotButtons.forEach((dot, i) => {
+    dot.classList.toggle("active", i === activeQuote);
+    dot.setAttribute("aria-selected", String(i === activeQuote));
   });
 }
 
-dotButtons.forEach((dot, index) => {
-  dot.addEventListener("click", () => showQuote(index));
-});
+dotButtons.forEach((dot, i) => dot.addEventListener("click", () => showQuote(i)));
 
-if (testimonialCards.length > 0) {
+const testimonialWrap = document.querySelector("[data-testimonials]");
+testimonialWrap?.addEventListener("mouseenter", () => { testimonialPaused = true; });
+testimonialWrap?.addEventListener("mouseleave", () => { testimonialPaused = false; });
+testimonialWrap?.addEventListener("focusin", () => { testimonialPaused = true; });
+testimonialWrap?.addEventListener("focusout", () => { testimonialPaused = false; });
+
+if (testimonialCards.length) {
   showQuote(0);
-  setInterval(() => showQuote(activeQuote + 1), 6500);
+  setInterval(() => {
+    if (!testimonialPaused) showQuote(activeQuote + 1);
+  }, 6500);
 }
 
-const reelTrack = document.querySelector("[data-reel-track]");
-const reelPrev = document.querySelector("#reelsPrev");
-const reelNext = document.querySelector("#reelsNext");
-let reelIndex = 0;
+// ── Contact form ─────────────────────────────────────
+const form = document.querySelector(".email-capture");
+const feedback = form?.querySelector(".form-feedback");
 
-function slidesPerView() {
-  if (window.innerWidth <= 620) return 1;
-  if (window.innerWidth <= 1080) return 2;
-  return 3;
-}
-
-function updateReelSlider() {
-  if (!reelTrack) return;
-
-  const slides = reelTrack.querySelectorAll(".reel-slide");
-  if (slides.length === 0) return;
-
-  const computed = getComputedStyle(reelTrack);
-  const gap = parseFloat(computed.gap) || 0;
-  const slideWidth = slides[0].getBoundingClientRect().width + gap;
-  const maxIndex = Math.max(0, slides.length - slidesPerView());
-
-  reelIndex = Math.min(Math.max(0, reelIndex), maxIndex);
-  reelTrack.style.transform = `translateX(-${reelIndex * slideWidth}px)`;
-
-  if (reelPrev) reelPrev.disabled = reelIndex === 0;
-  if (reelNext) reelNext.disabled = reelIndex === maxIndex;
-}
-
-if (reelPrev && reelNext) {
-  reelPrev.addEventListener("click", () => {
-    reelIndex -= 1;
-    updateReelSlider();
-  });
-
-  reelNext.addEventListener("click", () => {
-    reelIndex += 1;
-    updateReelSlider();
+if (form && feedback) {
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    feedback.textContent =
+      "Thanks. A&S will review your inquiry and reply with availability, scope guidance, and a custom quote shortly.";
+    form.reset();
   });
 }
-
-window.addEventListener("resize", updateReelSlider);
-window.addEventListener("load", updateReelSlider);

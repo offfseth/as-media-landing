@@ -3,373 +3,272 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>A&S Commercial Media | Real Estate Photo and Reels</title>
-  <meta
-    name="description"
-    content="A&S Commercial Media produces professional listing photography and Instagram reels that help agents launch properties with stronger visual impact."
-  >
+  <title>A&S Commercial Media | Real Estate Photo &amp; Reels</title>
+  <meta name="description" content="A&S Commercial Media produces professional listing photography and Instagram reels that help agents launch properties with stronger visual impact.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Manrope:wght@400;500;600;700;800&display=swap"
-    rel="stylesheet"
-  >
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
   <script src="script.js" defer></script>
 </head>
 <body>
-  <div class="orb orb-left" aria-hidden="true"></div>
-  <div class="orb orb-right" aria-hidden="true"></div>
 
-  <header class="site-header">
-    <a href="#top" class="brand">
-      <span class="brand-mark">
-        <img src="assets/logo/as-commercial-media-logo.png" alt="">
-      </span>
-      <span class="brand-copy">
-        <strong>A&amp;S Media</strong>
-        <small>Commercial real estate visuals</small>
-      </span>
-    </a>
+  <!-- HEADER -->
+  <header class="site-header" id="site-header">
+    <div class="header-inner">
+      <a href="#top" class="logo">A&amp;S <span class="logo-accent">Media</span></a>
+      <nav class="site-nav" aria-label="Primary">
+        <a href="#work">Work</a>
+        <a href="#reels">Reels</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <a href="#contact" class="btn-book">Book a Shoot</a>
+      <button class="menu-toggle" id="menu-toggle" aria-label="Open menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
 
-    <nav aria-label="Primary">
-      <a href="#portfolio">Portfolio</a>
+  <!-- MOBILE MENU -->
+  <div class="mobile-overlay" id="mobile-overlay" aria-hidden="true">
+    <button class="menu-close" id="menu-close" aria-label="Close menu">&#x2715;</button>
+    <nav class="mobile-nav" aria-label="Mobile">
+      <a href="#work">Work</a>
       <a href="#reels">Reels</a>
       <a href="#faq">FAQ</a>
       <a href="#contact">Contact</a>
+      <a href="#contact" class="mobile-cta">Book a Shoot</a>
     </nav>
-
-    <a class="btn btn-ghost" href="#contact">Book a shoot</a>
-  </header>
+  </div>
 
   <main id="top">
-    <section class="section hero reveal">
-      <video class="hero-film" autoplay muted loop playsinline poster="assets/portfolio/featured-exterior.jpg">
-        <source src="assets/portfolio/31521-wild-yukon-ct-toxic-2.mov">
+
+    <!-- HERO: fullscreen background video -->
+    <section class="hero">
+      <video class="hero-video" autoplay muted loop playsinline poster="assets/portfolio/featured-exterior.jpg">
+        <source src="assets/portfolio/clarissa-woodward.mov" type="video/quicktime">
       </video>
-      <div class="hero-scrim" aria-hidden="true"></div>
-
-      <div class="hero-copy">
-        <span class="section-tag">A&amp;S Commercial Media</span>
-        <h1>Real estate video that feels polished, warm, and ready to launch.</h1>
-        <p class="lead">
-          Walkthrough films, vertical reels, and supporting listing media for agents who want the
-          property to feel clear before the first showing.
-        </p>
-
+      <div class="hero-overlay" aria-hidden="true"></div>
+      <div class="hero-content">
+        <span class="hero-eyebrow">A&amp;S Commercial Media</span>
+        <h1>Real estate visuals built to stop the scroll.</h1>
         <div class="hero-actions">
-          <a class="btn btn-primary" href="#portfolio">View work</a>
-          <a class="btn btn-ghost" href="#contact">Request quote</a>
+          <a href="#work" class="btn-white-outline">View Work</a>
+          <a href="#contact" class="btn-white-ghost">Request Quote</a>
         </div>
-
-        <div class="hero-details stagger-group" aria-label="Service details">
-          <article class="stagger-item">
-            <span>Coverage</span>
-            <strong>Walkthroughs, reels, details</strong>
-          </article>
-          <article class="stagger-item">
-            <span>Delivery</span>
-            <strong>Organized for launch</strong>
-          </article>
-          <article class="stagger-item">
-            <span>Format</span>
-            <strong>MLS, Instagram, client handoff</strong>
-          </article>
-        </div>
+      </div>
+      <div class="scroll-cue" aria-hidden="true">
+        <span>Scroll</span>
+        <div class="scroll-line"></div>
       </div>
     </section>
 
-    <section id="portfolio" class="section reveal">
-      <div class="portfolio-studio">
-        <div class="section-head split studio-head">
-          <div>
-            <span class="section-tag section-tag-dark">Portfolio</span>
-            <h2>One property, covered with the angles that matter most.</h2>
-          </div>
-          <p>
-            The portfolio is now a single-property spotlight built around curb appeal, kitchen
-            finish quality, and open-plan scale.
-          </p>
-        </div>
+    <!-- TAGLINE -->
+    <section class="tagline-section reveal">
+      <div class="tagline-inner">
+        <h2 class="tagline">Properties that feel premium before the first showing.</h2>
+        <p class="tagline-sub">Walkthrough films, vertical reels, and MLS-ready photo sets for agents who need to move fast and look great.</p>
+        <a href="#contact" class="btn-blue-outline">Request a Quote &rarr;</a>
+      </div>
+    </section>
 
-        <div class="studio-layout stagger-group">
-          <article class="portfolio-feature stagger-item">
-            <img
-              class="portfolio-feature-photo"
-              src="assets/portfolio/featured-exterior.jpg"
-              alt="Exterior photograph of a large elevated coastal home."
-            >
-            <div class="project-meta">
-              <div class="meta-top">
-                <span>Featured shoot</span>
-                <span>Single-property spotlight</span>
-              </div>
-              <h3>Coastal exterior with instant presence</h3>
-              <p>
-                The main frame gets room to breathe so the home feels premium before the viewer even
-                reaches the supporting details.
-              </p>
-              <div class="project-stats">
-                <span>Exterior hero</span>
-                <span>Kitchen detail</span>
-                <span>Open living scale</span>
-              </div>
+    <!-- REELS -->
+    <section class="reels-section reveal" id="reels">
+      <div class="reels-header">
+        <div>
+          <span class="section-label">Featured Reels</span>
+          <h2>Vertical walkthroughs built to stop the scroll.</h2>
+        </div>
+        <div class="reels-nav" id="reels-nav">
+          <button class="reel-arrow" id="reelPrev" aria-label="Previous reel">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+          </button>
+          <button class="reel-arrow" id="reelNext" aria-label="Next reel">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+          </button>
+        </div>
+      </div>
+      <div class="reels-track-wrap">
+        <div class="reels-track" id="reels-track">
+
+          <figure class="reel-item">
+            <div class="reel-embed-shell">
+              <blockquote
+                class="instagram-media"
+                data-instgrm-permalink="https://www.instagram.com/reel/DU1twNIkQ9I/"
+                data-instgrm-version="14"
+              ></blockquote>
             </div>
-          </article>
+            <figcaption>Modern Exterior Walkup</figcaption>
+          </figure>
 
-          <div class="portfolio-stack stagger-item">
-            <article class="project-card tall">
-              <img
-                class="portfolio-living-photo"
-                src="assets/portfolio/featured-living.jpg"
-                alt="Open living room photograph with tall ceilings, wide flooring, and a fireplace wall."
-              >
-              <div class="project-overlay">
-                <span>Living room scale</span>
-                <strong>Open-concept volume that reads cleanly</strong>
-              </div>
-            </article>
+          <figure class="reel-item">
+            <div class="reel-embed-shell">
+              <blockquote
+                class="instagram-media"
+                data-instgrm-permalink="https://www.instagram.com/reel/DVJLS5UjV-m/"
+                data-instgrm-version="14"
+              ></blockquote>
+            </div>
+            <figcaption>Kitchen Detail Story</figcaption>
+          </figure>
 
-            <article class="project-card">
-              <img
-                class="portfolio-kitchen-photo"
-                src="assets/portfolio/featured-kitchen.jpg"
-                alt="Interior kitchen photograph with wood cabinetry and a marble island."
-              >
-              <div class="project-overlay">
-                <span>Kitchen framing</span>
-                <strong>Finish quality without visual clutter</strong>
-              </div>
-            </article>
-          </div>
-        </div>
+          <figure class="reel-item">
+            <div class="reel-embed-shell">
+              <blockquote
+                class="instagram-media"
+                data-instgrm-permalink="https://www.instagram.com/reel/DWE3RUok3z2/"
+                data-instgrm-version="14"
+              ></blockquote>
+            </div>
+            <figcaption>Featured Property Walkthrough</figcaption>
+          </figure>
 
-        <div class="portfolio-footer stagger-group">
-          <article class="portfolio-caption glass stagger-item">
-            <span class="summary-label">Why this works</span>
-            <p>
-              With only three real images available, the strongest presentation is deliberate and
-              specific: one home, three angles, and a layout that makes the property feel complete.
-            </p>
-          </article>
-
-          <div class="portfolio-tags glass stagger-item" aria-label="Portfolio highlights">
-            <span>Exterior curb appeal</span>
-            <span>Custom kitchen finishes</span>
-            <span>Open-plan living area</span>
-          </div>
         </div>
       </div>
     </section>
 
-    <section class="section reveal">
-      <div class="capabilities-shell glass">
-        <div class="section-head split">
-          <div>
-            <span class="section-tag">Delivery</span>
-            <h2>Prepared for every place the listing needs to show up.</h2>
-          </div>
-          <p>
-            Final files are organized for MLS, listing portals, and short-form social placements so
-            agents can move from shoot day to launch day with less friction.
-          </p>
-        </div>
+    <!-- WORK -->
+    <section class="work-section reveal" id="work">
+      <div class="work-header">
+        <span class="section-label">Selected Work</span>
+        <h2>One property, covered with the angles that matter most.</h2>
+      </div>
+      <div class="work-list">
 
-        <div class="capabilities-grid stagger-group">
-          <article class="capability-card glass stagger-item">
-            <strong>MLS-ready photo sets</strong>
+        <article class="work-item reveal">
+          <div class="work-text">
+            <span class="work-type">Exterior</span>
+            <h3>Coastal Presence with Instant Curb Appeal</h3>
+            <p>The main frame gets room to breathe so the home feels premium before the viewer even reaches the supporting details.</p>
+          </div>
+          <div class="work-image">
+            <img src="assets/portfolio/featured-exterior.jpg" alt="Exterior photograph of an elevated coastal home" loading="lazy">
+          </div>
+        </article>
+
+        <article class="work-item work-item--flip reveal">
+          <div class="work-text">
+            <span class="work-type">Living Room</span>
+            <h3>Open-Plan Volume That Reads Cleanly</h3>
+            <p>Height and natural light captured to communicate scale before the first showing.</p>
+          </div>
+          <div class="work-image">
+            <img src="assets/portfolio/featured-living.jpg" alt="Open living room with tall ceilings and fireplace" loading="lazy">
+          </div>
+        </article>
+
+        <article class="work-item reveal">
+          <div class="work-text">
+            <span class="work-type">Kitchen</span>
+            <h3>Finish Quality Without Visual Clutter</h3>
+            <p>Custom cabinetry and marble surfaces presented with the clarity high-end listings demand.</p>
+          </div>
+          <div class="work-image">
+            <img src="assets/portfolio/featured-kitchen.jpg" alt="Kitchen with wood cabinetry and marble island" loading="lazy">
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- STATS -->
+    <section class="stats-section reveal">
+      <div class="stats-inner">
+        <div class="stat-item">
+          <strong>120+</strong>
+          <span>Listings captured monthly</span>
+        </div>
+        <div class="stat-sep" aria-hidden="true"></div>
+        <div class="stat-item">
+          <strong>48 hrs</strong>
+          <span>Typical reel delivery</span>
+        </div>
+        <div class="stat-sep" aria-hidden="true"></div>
+        <div class="stat-item">
+          <strong>1 team</strong>
+          <span>Photos, reels &amp; launch assets</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="testimonials-section reveal">
+      <div class="testimonials-inner">
+        <div class="testimonial-wrap" data-testimonials>
+          <article class="quote active">
+            <blockquote>&ldquo;A&amp;S shot and delivered within a day, and our reel reached 18k views in the first weekend.&rdquo;</blockquote>
+            <cite>Jordan Lee &mdash; Keller Group</cite>
+          </article>
+          <article class="quote">
+            <blockquote>&ldquo;Every listing looks premium now. Their edits are clean and the pacing on short videos is excellent.&rdquo;</blockquote>
+            <cite>Nadia Chen &mdash; Urban Nest Realty</cite>
+          </article>
+          <article class="quote">
+            <blockquote>&ldquo;They handle photos, drone, and reels in one booking, which makes our launch process effortless.&rdquo;</blockquote>
+            <cite>Miguel Flores &mdash; Oakline Homes</cite>
+          </article>
+        </div>
+        <div class="quote-dots" role="tablist" aria-label="Testimonial navigation">
+          <button type="button" data-quote-dot="0" aria-label="Testimonial 1"></button>
+          <button type="button" data-quote-dot="1" aria-label="Testimonial 2"></button>
+          <button type="button" data-quote-dot="2" aria-label="Testimonial 3"></button>
+        </div>
+      </div>
+    </section>
+
+    <!-- CAPABILITIES -->
+    <section class="caps-section reveal">
+      <div class="caps-inner">
+        <div class="caps-header">
+          <span class="section-label">Delivery</span>
+          <h2>Prepared for every place the listing needs to show up.</h2>
+          <p>Final files organized for MLS, listing portals, and social placements so agents move from shoot day to launch day with less friction.</p>
+        </div>
+        <div class="caps-grid">
+          <div class="cap-item">
+            <h3>MLS-Ready Photo Sets</h3>
             <p>Clean exports, balanced edits, and consistent sequencing across the gallery.</p>
-          </article>
-          <article class="capability-card glass stagger-item">
-            <strong>Short-form launch reels</strong>
+          </div>
+          <div class="cap-item">
+            <h3>Short-Form Launch Reels</h3>
             <p>Vertical edits with strong opening frames, pacing, and social-first composition.</p>
-          </article>
-          <article class="capability-card glass stagger-item">
-            <strong>Organized team handoff</strong>
+          </div>
+          <div class="cap-item">
+            <h3>Organized Team Handoff</h3>
             <p>Assets delivered clearly for agents, assistants, and marketing coordinators.</p>
-          </article>
-        </div>
-
-        <div class="integrations-row stagger-group">
-          <span class="logo-chip glass stagger-item">MLS</span>
-          <span class="logo-chip glass stagger-item">Instagram</span>
-          <span class="logo-chip glass stagger-item">Zillow</span>
-          <span class="logo-chip glass stagger-item">Redfin</span>
-          <span class="logo-chip glass stagger-item">Homes.com</span>
-          <span class="logo-chip glass stagger-item">LinkedIn</span>
-        </div>
-      </div>
-    </section>
-
-    <section id="reels" class="section reveal">
-      <div class="reels-shell glass">
-        <div class="section-head split">
-          <div>
-            <span class="section-tag">Featured Reels</span>
-            <h2>Vertical walkthroughs built to stop the scroll.</h2>
-            <p>
-              Reels stay front and center, but the surrounding presentation is cleaner and more
-              premium so they feel like a featured media product instead of a secondary add-on.
-            </p>
-          </div>
-          <div class="slider-controls">
-            <button type="button" class="btn btn-ghost" id="reelsPrev" aria-label="Previous reel slide">Prev</button>
-            <button type="button" class="btn btn-ghost" id="reelsNext" aria-label="Next reel slide">Next</button>
           </div>
         </div>
-
-        <div class="reels-layout">
-          <aside class="reels-summary">
-            <div class="summary-card glass">
-              <p class="summary-label">Why it works</p>
-              <h3>Each reel opens on the best angle and moves like a short property story.</h3>
-              <ul class="summary-points">
-                <li>Strong opening frame within the first second</li>
-                <li>Transitions built around room flow and natural light</li>
-                <li>Cover frames that still look polished in the grid</li>
-              </ul>
-            </div>
-          </aside>
-
-          <div class="reel-carousel">
-            <div class="reel-track stagger-group" data-reel-track>
-              <article class="reel-slide stagger-item reel-slide-embed">
-                <div class="reel-embed-shell">
-                  <blockquote
-                    class="instagram-media"
-                    data-instgrm-permalink="https://www.instagram.com/reel/DU1twNIkQ9I/"
-                    data-instgrm-version="14"
-                  ></blockquote>
-                </div>
-                <h3>Modern Exterior Walkup</h3>
-              </article>
-
-              <article class="reel-slide stagger-item reel-slide-embed">
-                <div class="reel-embed-shell">
-                  <blockquote
-                    class="instagram-media"
-                    data-instgrm-permalink="https://www.instagram.com/reel/DVJLS5UjV-m/"
-                    data-instgrm-version="14"
-                  ></blockquote>
-                </div>
-                <h3>Kitchen Detail Story</h3>
-              </article>
-
-              <article class="reel-slide stagger-item reel-slide-embed">
-                <div class="reel-embed-shell">
-                  <blockquote
-                    class="instagram-media"
-                    data-instgrm-permalink="https://www.instagram.com/reel/DWE3RUok3z2/"
-                    data-instgrm-version="14"
-                  ></blockquote>
-                </div>
-                <h3>Featured Property Walkthrough</h3>
-              </article>
-
-              <article class="reel-slide stagger-item">
-                <a class="reel-frame" href="https://www.instagram.com/ascommmedia/" target="_blank" rel="noreferrer">
-                  <img
-                    src="https://images.unsplash.com/photo-1600573472592-401b489a3cdc?auto=format&fit=crop&w=800&q=80"
-                    alt="Vertical video thumbnail of a backyard and pool sequence."
-                  >
-                  <span class="play-pill">Watch Reel</span>
-                </a>
-                <h3>Backyard Lifestyle Cut</h3>
-              </article>
-
-              <article class="reel-slide stagger-item">
-                <a class="reel-frame" href="https://www.instagram.com/ascommmedia/" target="_blank" rel="noreferrer">
-                  <img
-                    src="https://images.unsplash.com/photo-1600607687644-aac4c3eac7f4?auto=format&fit=crop&w=800&q=80"
-                    alt="Vertical video thumbnail of a sunset exterior walkthrough."
-                  >
-                  <span class="play-pill">Watch Reel</span>
-                </a>
-                <h3>Twilight Exterior Teaser</h3>
-              </article>
-            </div>
-          </div>
-        </div>
-
-        <p class="tiny-note">
-          The first three cards use Instagram embeds. Send the remaining reel URLs and the rest can
-          be converted from placeholder thumbnails to live previews too.
-        </p>
-      </div>
-    </section>
-
-    <section class="section reveal">
-      <div class="results-grid">
-        <div class="results-copy">
-          <span class="section-tag">Proof</span>
-          <h2>A smoother shoot day and a cleaner launch package.</h2>
-          <p>
-            Agents use A&amp;S when they want stills and short-form video to feel cohesive, fast,
-            and polished enough for higher-end listings.
-          </p>
-
-          <div class="results-metrics stagger-group">
-            <article class="metric-card glass stagger-item">
-              <strong>120+</strong>
-              <span>Listings captured monthly</span>
-            </article>
-            <article class="metric-card glass stagger-item">
-              <strong>48 hrs</strong>
-              <span>Typical reel delivery</span>
-            </article>
-            <article class="metric-card glass stagger-item">
-              <strong>1 team</strong>
-              <span>Photos, reels, and launch assets together</span>
-            </article>
-          </div>
-        </div>
-
-        <div class="testimonial-panel">
-          <div class="testimonial-wrap glass" data-testimonials>
-            <article class="quote active">
-              <p>"A&amp;S shot and delivered within a day, and our reel reached 18k views in the first weekend."</p>
-              <span>Jordan Lee, Keller Group</span>
-            </article>
-            <article class="quote">
-              <p>"Every listing looks premium now. Their edits are clean and the pacing on short videos is excellent."</p>
-              <span>Nadia Chen, Urban Nest Realty</span>
-            </article>
-            <article class="quote">
-              <p>"They handle photos, drone, and reels in one booking, which makes our launch process effortless."</p>
-              <span>Miguel Flores, Oakline Homes</span>
-            </article>
-          </div>
-
-          <div class="dots" role="tablist" aria-label="Testimonial selector">
-            <button type="button" data-quote-dot="0" aria-label="Show testimonial 1"></button>
-            <button type="button" data-quote-dot="1" aria-label="Show testimonial 2"></button>
-            <button type="button" data-quote-dot="2" aria-label="Show testimonial 3"></button>
-          </div>
+        <div class="platforms-row">
+          <span>MLS</span>
+          <span>Instagram</span>
+          <span>Zillow</span>
+          <span>Redfin</span>
+          <span>Homes.com</span>
+          <span>LinkedIn</span>
         </div>
       </div>
     </section>
 
-    <section id="faq" class="section reveal">
-      <div class="faq-layout">
-        <div class="faq-copy">
-          <span class="section-tag">FAQ</span>
+    <!-- FAQ -->
+    <section class="faq-section reveal" id="faq">
+      <div class="faq-inner">
+        <div class="faq-header">
+          <span class="section-label">FAQ</span>
           <h2>Questions before you book?</h2>
-          <p>
-            The process is built to stay simple for agents and teams that need to move quickly
-            between scheduling, shooting, and launch.
-          </p>
         </div>
-
-        <div class="faq-list stagger-group">
-          <details class="glass stagger-item">
+        <div class="faq-list">
+          <details>
             <summary>How quickly can you shoot and deliver?</summary>
             <p>Most shoots are completed within 1 to 2 days and delivered within 24 hours after the session.</p>
           </details>
-          <details class="glass stagger-item">
+          <details>
             <summary>Do you travel outside the metro area?</summary>
             <p>Yes. Surrounding suburbs can be covered, and longer travel can be quoted by project.</p>
           </details>
-          <details class="glass stagger-item">
+          <details>
             <summary>Can you match our brokerage brand style?</summary>
             <p>Yes. Color tone, pacing, and graphic overlays can be aligned to brokerage guidelines and team branding.</p>
           </details>
@@ -377,116 +276,69 @@
       </div>
     </section>
 
-    <section id="contact" class="section contact-section reveal">
-      <div class="contact-shell">
+    <!-- CONTACT -->
+    <section class="contact-section reveal" id="contact">
+      <div class="contact-inner">
         <div class="contact-copy">
-          <span class="section-tag">Contact</span>
+          <span class="section-label section-label--light">Contact</span>
           <h2>Request a custom quote for the property.</h2>
-          <p>
-            A&amp;S does not use a fixed rate card yet. Every quote is scoped around the property,
-            the media mix, the timeline, and the launch support you need.
-          </p>
-
-          <div class="contact-notes stagger-group">
-            <article class="contact-note glass stagger-item">
-              <span>What shapes the quote</span>
-              <ul class="contact-list">
-                <li>Property size, layout complexity, and target image count</li>
-                <li>Photo-only coverage or a mix of reels, drone, and add-ons</li>
-                <li>Travel distance, access timing, and turnaround expectations</li>
-              </ul>
-            </article>
-
-            <article class="contact-note glass stagger-item">
-              <span>Common deliverables</span>
-              <p>
-                MLS-ready stills, vertical walkthrough reels, exterior coverage, and organized
-                media handoff for agents, assistants, and marketing teams.
-              </p>
-            </article>
-
-            <article class="contact-note glass stagger-item">
-              <span>Best way to inquire</span>
-              <p>
-                Send the address, ideal shoot date, property type, and any must-have coverage so
-                the reply can include the right recommendation and next steps.
-              </p>
-            </article>
-          </div>
-
-          <div class="contact-links" aria-label="Contact links">
-            <a class="contact-bubble" href="mailto:ascommercialmedia@gmail.com" aria-label="Email A&S Media">
-              <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-                <path d="M3 6.75A2.75 2.75 0 0 1 5.75 4h12.5A2.75 2.75 0 0 1 21 6.75v10.5A2.75 2.75 0 0 1 18.25 20H5.75A2.75 2.75 0 0 1 3 17.25V6.75Zm2.2-.75 6.8 5.1 6.8-5.1H5.2Zm13.8 1.25-6.4 4.8a1 1 0 0 1-1.2 0L5 7.25v10a.75.75 0 0 0 .75.75h12.5a.75.75 0 0 0 .75-.75v-10Z"></path>
-              </svg>
-              <span class="sr-only">Email</span>
-            </a>
-            <a class="contact-bubble" href="https://www.instagram.com/ascommmedia/" target="_blank" rel="noreferrer" aria-label="Visit A&S Media on Instagram">
-              <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-                <path d="M7.75 2h8.5A5.76 5.76 0 0 1 22 7.75v8.5A5.76 5.76 0 0 1 16.25 22h-8.5A5.76 5.76 0 0 1 2 16.25v-8.5A5.76 5.76 0 0 1 7.75 2Zm0 2A3.75 3.75 0 0 0 4 7.75v8.5A3.75 3.75 0 0 0 7.75 20h8.5A3.75 3.75 0 0 0 20 16.25v-8.5A3.75 3.75 0 0 0 16.25 4h-8.5Zm8.75 1.5a1.25 1.25 0 1 1-1.251 1.25A1.25 1.25 0 0 1 16.5 5.5ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 2a3 3 0 1 0 .001 6.001A3 3 0 0 0 12 9Z"></path>
-              </svg>
-              <span class="sr-only">Instagram</span>
-            </a>
-            <a class="contact-bubble" href="https://www.linkedin.com/company/as-media/" target="_blank" rel="noreferrer" aria-label="Visit A&S Media on LinkedIn">
-              <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-                <path d="M4.98 3.5a2.5 2.5 0 1 1 0 5.001A2.5 2.5 0 0 1 4.98 3.5ZM3 9h4v12H3V9Zm7 0h3.83v1.64h.05c.53-1 1.84-2.05 3.8-2.05 4.07 0 4.82 2.68 4.82 6.17V21h-4v-5.39c0-1.28-.02-2.93-1.79-2.93-1.79 0-2.06 1.4-2.06 2.84V21h-4V9Z"></path>
-              </svg>
-              <span class="sr-only">LinkedIn</span>
-            </a>
+          <p>Every quote is scoped around the property, the media mix, the timeline, and the launch support you need.</p>
+          <div class="contact-links">
+            <a href="mailto:ascommercialmedia@gmail.com">ascommercialmedia@gmail.com</a>
+            <a href="https://www.instagram.com/ascommmedia/" target="_blank" rel="noreferrer">@ascommmedia</a>
+            <a href="https://www.linkedin.com/company/as-media/" target="_blank" rel="noreferrer">LinkedIn</a>
           </div>
         </div>
-
-        <form class="email-capture contact-form">
-          <label class="form-label" for="contact-email">
-            Send the listing details and A&amp;S will reply with availability, coverage guidance,
-            and a custom quote.
+        <form class="contact-form email-capture">
+          <label class="form-label" for="c-email">
+            Send the listing details and A&amp;S will reply with availability and a custom quote.
           </label>
           <div class="form-grid">
-            <input id="contact-name" type="text" name="name" placeholder="Name or team" required>
-            <input id="contact-email" type="email" name="email" placeholder="you@agency.com" required>
+            <input id="c-name" type="text" name="name" placeholder="Name or team" required>
+            <input id="c-email" type="email" name="email" placeholder="you@agency.com" required>
             <input type="text" name="property" placeholder="Property address or project type">
-            <select name="service" aria-label="Select a service">
+            <select name="service" aria-label="Coverage needed">
               <option value="">Coverage needed</option>
               <option value="photo">Photography only</option>
               <option value="photo-reels">Photography + reels</option>
               <option value="full-media">Photography + reels + drone</option>
               <option value="not-sure">Not sure yet</option>
             </select>
-            <textarea name="details" rows="5" placeholder="Timeline, square footage, occupancy status, access notes, and anything else that will help scope the project."></textarea>
-            <button type="submit" class="btn btn-primary">Request custom quote</button>
+            <textarea name="details" rows="5" placeholder="Timeline, square footage, occupancy status, access notes..."></textarea>
+            <button type="submit" class="btn-submit">Request Custom Quote</button>
           </div>
           <p class="form-feedback" aria-live="polite"></p>
         </form>
       </div>
     </section>
+
   </main>
 
+  <!-- FOOTER -->
   <footer class="site-footer">
-    <div class="footer-brand">
-      <p>A&amp;S Commercial Media</p>
-      <span>Real estate photography, reels, and visual marketing.</span>
-    </div>
-
-    <nav class="footer-nav" aria-label="Footer">
-      <a href="#portfolio">Portfolio</a>
-      <a href="#reels">Reels</a>
-      <a href="#faq">FAQ</a>
-      <a href="#contact">Contact</a>
-    </nav>
-
-    <a class="footer-email" href="mailto:ascommercialmedia@gmail.com">ascommercialmedia@gmail.com</a>
-
-    <div class="social-links" aria-label="Social media links">
-      <a class="social-icon" href="https://www.linkedin.com/company/as-media/" target="_blank" rel="noreferrer" aria-label="Visit A&S Media on LinkedIn">
-        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-          <path d="M4.98 3.5a2.5 2.5 0 1 1 0 5.001A2.5 2.5 0 0 1 4.98 3.5ZM3 9h4v12H3V9Zm7 0h3.83v1.64h.05c.53-1 1.84-2.05 3.8-2.05 4.07 0 4.82 2.68 4.82 6.17V21h-4v-5.39c0-1.28-.02-2.93-1.79-2.93-1.79 0-2.06 1.4-2.06 2.84V21h-4V9Z"></path>
-        </svg>
-      </a>
-      <a class="social-icon" href="https://www.instagram.com/ascommmedia/" target="_blank" rel="noreferrer" aria-label="Visit A&S Media on Instagram">
-        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-          <path d="M7.75 2h8.5A5.76 5.76 0 0 1 22 7.75v8.5A5.76 5.76 0 0 1 16.25 22h-8.5A5.76 5.76 0 0 1 2 16.25v-8.5A5.76 5.76 0 0 1 7.75 2Zm0 2A3.75 3.75 0 0 0 4 7.75v8.5A3.75 3.75 0 0 0 7.75 20h8.5A3.75 3.75 0 0 0 20 16.25v-8.5A3.75 3.75 0 0 0 16.25 4h-8.5Zm8.75 1.5a1.25 1.25 0 1 1-1.251 1.25A1.25 1.25 0 0 1 16.5 5.5ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 2a3 3 0 1 0 .001 6.001A3 3 0 0 0 12 9Z"></path>
-        </svg>
-      </a>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <a href="#top" class="logo">A&amp;S <span class="logo-accent">Media</span></a>
+        <p>Real estate photography, reels, and visual marketing.</p>
+      </div>
+      <nav class="footer-nav" aria-label="Footer">
+        <a href="#work">Work</a>
+        <a href="#reels">Reels</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <div class="footer-right">
+        <a href="mailto:ascommercialmedia@gmail.com" class="footer-email">ascommercialmedia@gmail.com</a>
+        <div class="social-links">
+          <a href="https://www.instagram.com/ascommmedia/" target="_blank" rel="noreferrer" aria-label="A&S Media on Instagram">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7.75 2h8.5A5.76 5.76 0 0 1 22 7.75v8.5A5.76 5.76 0 0 1 16.25 22h-8.5A5.76 5.76 0 0 1 2 16.25v-8.5A5.76 5.76 0 0 1 7.75 2Zm0 2A3.75 3.75 0 0 0 4 7.75v8.5A3.75 3.75 0 0 0 7.75 20h8.5A3.75 3.75 0 0 0 20 16.25v-8.5A3.75 3.75 0 0 0 16.25 4h-8.5Zm8.75 1.5a1.25 1.25 0 1 1-1.251 1.25A1.25 1.25 0 0 1 16.5 5.5ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 2a3 3 0 1 0 .001 6.001A3 3 0 0 0 12 9Z"/></svg>
+          </a>
+          <a href="https://www.linkedin.com/company/as-media/" target="_blank" rel="noreferrer" aria-label="A&S Media on LinkedIn">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5.001A2.5 2.5 0 0 1 4.98 3.5ZM3 9h4v12H3V9Zm7 0h3.83v1.64h.05c.53-1 1.84-2.05 3.8-2.05 4.07 0 4.82 2.68 4.82 6.17V21h-4v-5.39c0-1.28-.02-2.93-1.79-2.93-1.79 0-2.06 1.4-2.06 2.84V21h-4V9Z"/></svg>
+          </a>
+        </div>
+        <p class="footer-copy">&copy; 2026 A&amp;S Commercial Media</p>
+      </div>
     </div>
   </footer>
 
