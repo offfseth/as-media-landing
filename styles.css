@@ -470,7 +470,6 @@ h3 {
 .reels-section {
   padding: clamp(60px, 8vw, 120px) 0;
   background: var(--bg);
-  border-top: 1px solid var(--gray-200);
 }
 
 .reels-header {
@@ -591,7 +590,6 @@ h3 {
 .work-section {
   padding: clamp(60px, 8vw, 120px) var(--px);
   background: var(--bg);
-  border-top: 1px solid var(--gray-200);
 }
 
 .work-header {
@@ -657,8 +655,6 @@ h3 {
 .stats-section {
   padding: clamp(60px, 8vw, 100px) var(--px);
   background: var(--bg);
-  border-top: 1px solid var(--gray-200);
-  border-bottom: 1px solid var(--gray-200);
 }
 
 .stats-inner {
@@ -841,7 +837,6 @@ h3 {
 .faq-section {
   padding: clamp(60px, 8vw, 120px) var(--px);
   background: var(--bg);
-  border-top: 1px solid var(--gray-200);
 }
 
 .faq-inner {
