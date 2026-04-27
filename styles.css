@@ -472,6 +472,9 @@ h3 {
 }
 
 .reels-header {
+  max-width: var(--max-w);
+  margin-left: auto;
+  margin-right: auto;
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
@@ -522,6 +525,9 @@ h3 {
 }
 
 .reels-track-wrap {
+  max-width: var(--max-w);
+  margin-left: auto;
+  margin-right: auto;
   padding: 0 var(--px);
   overflow: hidden;
 }
