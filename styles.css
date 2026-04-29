@@ -651,6 +651,18 @@ h3 {
   transform: scale(1.04);
 }
 
+.work-image video {
+  width: 100%;
+  height: 420px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.65s ease;
+}
+
+.work-item:hover .work-image video {
+  transform: scale(1.04);
+}
+
 /* ─── STATS ─────────────────────────────────────────── */
 .stats-section {
   padding: clamp(60px, 8vw, 100px) var(--px);
@@ -1198,7 +1210,8 @@ summary:focus-visible {
     order: 0;
   }
 
-  .work-image img {
+  .work-image img,
+  .work-image video {
     height: 320px;
   }
 
@@ -1272,7 +1285,8 @@ summary:focus-visible {
     grid-column: auto;
   }
 
-  .work-image img {
+  .work-image img,
+  .work-image video {
     height: 260px;
   }
 
@@ -1297,7 +1311,8 @@ summary:focus-visible {
     opacity: 0.5;
   }
 
-  .work-item:hover .work-image img {
+  .work-item:hover .work-image img,
+  .work-item:hover .work-image video {
     transform: none;
   }
 }
