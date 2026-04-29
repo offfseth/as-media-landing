@@ -108,10 +108,11 @@ h3 {
 
 /* ─── HEADER ────────────────────────────────────────── */
 .site-header {
-  position: relative;
-  background: var(--bg);
-  border-bottom: 1px solid var(--gray-200);
-  box-shadow: 0 1px 20px rgba(0, 0, 0, 0.06);
+  position: absolute;
+  inset-x: 0;
+  top: 0;
+  z-index: 100;
+  border-bottom: 1px solid transparent;
 }
 
 .site-header.scrolled {
@@ -131,7 +132,8 @@ h3 {
 }
 
 .site-header .logo {
-  color: var(--charcoal);
+  color: var(--white);
+  transition: color 0.35s ease;
 }
 
 .site-header.scrolled .logo {
@@ -150,12 +152,12 @@ h3 {
   letter-spacing: 0.16em;
   text-transform: uppercase;
   text-decoration: none;
-  color: var(--gray-500);
+  color: rgba(255, 255, 255, 0.8);
   transition: color 0.2s ease;
 }
 
 .site-nav a:hover {
-  color: var(--charcoal);
+  color: var(--white);
 }
 
 .site-header.scrolled .site-nav a {
@@ -174,16 +176,15 @@ h3 {
   text-transform: uppercase;
   text-decoration: none;
   padding: 10px 22px;
-  border: 1px solid rgba(59, 159, 231, 0.45);
-  color: var(--brand);
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  color: var(--white);
   transition: background 0.25s ease, color 0.25s ease, border-color 0.25s ease;
   white-space: nowrap;
 }
 
 .btn-book:hover {
-  background: var(--brand);
-  color: var(--white);
-  border-color: var(--brand);
+  background: var(--white);
+  color: var(--charcoal);
 }
 
 .site-header.scrolled .btn-book {
@@ -214,7 +215,7 @@ h3 {
   display: block;
   width: 22px;
   height: 1.5px;
-  background: var(--charcoal);
+  background: var(--white);
   transition: background 0.35s ease;
 }
 
