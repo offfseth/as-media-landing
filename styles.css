@@ -108,12 +108,10 @@ h3 {
 
 /* ─── HEADER ────────────────────────────────────────── */
 .site-header {
-  position: fixed;
-  inset-x: 0;
-  top: 0;
-  z-index: 100;
-  transition: background 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
-  border-bottom: 1px solid transparent;
+  position: relative;
+  background: var(--bg);
+  border-bottom: 1px solid var(--gray-200);
+  box-shadow: 0 1px 20px rgba(0, 0, 0, 0.06);
 }
 
 .site-header.scrolled {
@@ -133,8 +131,7 @@ h3 {
 }
 
 .site-header .logo {
-  color: var(--white);
-  transition: color 0.35s ease;
+  color: var(--charcoal);
 }
 
 .site-header.scrolled .logo {
@@ -153,12 +150,12 @@ h3 {
   letter-spacing: 0.16em;
   text-transform: uppercase;
   text-decoration: none;
-  color: rgba(255, 255, 255, 0.8);
+  color: var(--gray-500);
   transition: color 0.2s ease;
 }
 
 .site-nav a:hover {
-  color: var(--white);
+  color: var(--charcoal);
 }
 
 .site-header.scrolled .site-nav a {
@@ -177,15 +174,16 @@ h3 {
   text-transform: uppercase;
   text-decoration: none;
   padding: 10px 22px;
-  border: 1px solid rgba(255, 255, 255, 0.45);
-  color: var(--white);
+  border: 1px solid rgba(59, 159, 231, 0.45);
+  color: var(--brand);
   transition: background 0.25s ease, color 0.25s ease, border-color 0.25s ease;
   white-space: nowrap;
 }
 
 .btn-book:hover {
-  background: var(--white);
-  color: var(--charcoal);
+  background: var(--brand);
+  color: var(--white);
+  border-color: var(--brand);
 }
 
 .site-header.scrolled .btn-book {
@@ -216,7 +214,7 @@ h3 {
   display: block;
   width: 22px;
   height: 1.5px;
-  background: var(--white);
+  background: var(--charcoal);
   transition: background 0.35s ease;
 }
 
