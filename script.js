@@ -122,10 +122,20 @@ const form = document.querySelector(".email-capture");
 const feedback = form?.querySelector(".form-feedback");
 
 if (form && feedback) {
-  form.addEventListener("submit", (e) => {
+  form.addEventListener("submit", async (e) => {
     e.preventDefault();
-    feedback.textContent =
-      "Thanks. A&S will review your inquiry and reply with availability, scope guidance, and a custom quote shortly.";
-    form.reset();
+    try {
+      await fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: new URLSearchParams(new FormData(form)).toString(),
+      });
+      feedback.textContent =
+        "Thanks. A&S will review your inquiry and reply with availability, scope guidance, and a custom quote shortly.";
+      form.reset();
+    } catch {
+      feedback.textContent =
+        "Something went wrong — please email us directly at ascommercialmedia@gmail.com.";
+    }
   });
 }
