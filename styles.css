@@ -34,6 +34,19 @@ body {
   text-rendering: optimizeLegibility;
 }
 
+/* Subtle film grain over the whole site for a tactile, shot-on-film feel */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 9998;
+  pointer-events: none;
+  opacity: 0.055;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.82' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 200px 200px;
+}
+
 img {
   display: block;
   max-width: 100%;
@@ -631,12 +644,33 @@ h3 {
   align-content: start;
 }
 
+/* Editorial gallery plate: oversized faint index + hairline + label */
+.work-index {
+  font-family: var(--font-display);
+  font-size: clamp(2.4rem, 4vw, 3.6rem);
+  font-weight: 300;
+  line-height: 0.9;
+  color: var(--gray-200);
+  font-feature-settings: "tnum";
+}
+
 .work-type {
+  display: flex;
+  align-items: center;
+  gap: 14px;
   font-size: 0.68rem;
   font-weight: 600;
   letter-spacing: 0.22em;
   text-transform: uppercase;
   color: var(--brand);
+}
+
+.work-type::before {
+  content: "";
+  width: 34px;
+  height: 1px;
+  background: currentColor;
+  opacity: 0.5;
 }
 
 .work-text p {
@@ -647,21 +681,41 @@ h3 {
 }
 
 .work-image {
+  position: relative;
   overflow: hidden;
   border-radius: 3px;
   box-shadow: 0 16px 48px rgba(0, 0, 0, 0.12);
 }
 
+/* Cinematic vignette over the framed media (not the free-standing reel) */
+.work-item:not(.work-item--reel) .work-image::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  border-radius: inherit;
+  background: radial-gradient(125% 115% at 50% 38%, transparent 52%, rgba(20, 14, 4, 0.28) 100%);
+  mix-blend-mode: multiply;
+  z-index: 1;
+}
+
+/* Stills drift slowly (Ken Burns) so even photos feel alive like the videos */
 .work-image img {
   width: 100%;
   height: 420px;
   object-fit: cover;
   display: block;
-  transition: transform 0.65s ease;
+  animation: kenburns 26s ease-in-out infinite alternate;
+  transform-origin: center;
 }
 
-.work-item:hover .work-image img {
-  transform: scale(1.04);
+@keyframes kenburns {
+  0% {
+    transform: scale(1.05) translate(0, 0);
+  }
+  100% {
+    transform: scale(1.13) translate(-1.6%, -1.2%);
+  }
 }
 
 .work-image video {
@@ -669,11 +723,11 @@ h3 {
   height: 480px;
   object-fit: cover;
   display: block;
-  transition: transform 0.65s ease;
+  transition: transform 1.2s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .work-item:hover .work-image video {
-  transform: scale(1.04);
+  transform: scale(1.05);
 }
 
 /* Vertical reel: show full 9:16 frame instead of cropping into a wide box */
@@ -1208,13 +1262,17 @@ textarea {
 /* ─── SCROLL REVEAL ─────────────────────────────────── */
 .reveal {
   opacity: 0;
-  transform: translateY(28px);
-  transition: opacity 0.85s ease, transform 0.85s ease;
+  transform: translateY(42px);
+  filter: blur(9px);
+  transition: opacity 1.15s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 1.15s cubic-bezier(0.22, 1, 0.36, 1),
+    filter 1.15s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .reveal.visible {
   opacity: 1;
   transform: translateY(0);
+  filter: blur(0);
 }
 
 /* ─── FOCUS ─────────────────────────────────────────── */
@@ -1329,12 +1387,18 @@ summary:focus-visible {
   .reveal {
     opacity: 1;
     transform: none;
+    filter: none;
     transition: none;
   }
 
   .scroll-line {
     animation: none;
     opacity: 0.5;
+  }
+
+  .work-image img {
+    animation: none;
+    transform: none;
   }
 
   .work-item:hover .work-image img,
