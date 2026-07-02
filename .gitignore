@@ -1,3 +1,6 @@
 .DS_Store
 Thumbs.db
 assets/portfolio/clarissa-woodward.mov
+
+# Local preview server logs
+.preview.*.log
